@@ -19,11 +19,12 @@ a{color:inherit;text-decoration:none}button{font:inherit}
 .hero-copy>*{animation:fadeUp 1.2s cubic-bezier(.2,.7,.2,1) both}
 .hero-copy>:nth-child(1){animation-delay:.2s}.hero-copy>:nth-child(2){animation-delay:.4s}.hero-copy>:nth-child(3){animation-delay:.7s}.hero-copy>:nth-child(4){animation-delay:.95s}
 .eyebrow,.section-kicker{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rose2)}
-.hero h1{font:500 clamp(76px,12vw,158px)/.83 'Playfair Display';letter-spacing:-5px;margin:28px 0 30px}
-.hero h1 em{font-weight:500;color:var(--rose2);display:block;padding-left:12vw}
-.hero-sub{font:italic 21px 'Playfair Display';color:#e6cfd0;max-width:390px;line-height:1.6;margin:0 0 36px}
-.hero-meta{display:flex;align-items:center;gap:18px;font-size:11px;letter-spacing:2px;color:#e5cbd0}
-.hero-meta span:first-child{border:1px solid #e8bfc65c;padding:12px 17px;border-radius:30px}
+.hero h1{font:500 clamp(76px,12vw,158px)/.83 'Playfair Display';letter-spacing:-5px;margin:28px 0 30px;color:#fff;text-shadow:0 2px 0 #00000030,0 12px 32px #000000b0,0 0 70px #e7b9bd40}
+.hero h1 em{font-weight:500;display:block;padding-left:12vw;padding-right:.12em;background:linear-gradient(120deg,#ffe0e4,#e9a6b3 55%,#f9cdd4);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;filter:drop-shadow(0 8px 16px #000000a8) drop-shadow(0 0 26px #e7b9bd60)}
+.hero-sub{font:italic 21px 'Playfair Display';color:#fff1f3;text-shadow:0 3px 16px #000d,0 1px 3px #0009;max-width:390px;line-height:1.6;margin:0 0 36px}
+.hero-meta{display:flex;align-items:center;gap:18px;font-size:11px;letter-spacing:2px;color:#fbe6ea;text-shadow:0 2px 10px #000c}
+.eyebrow{text-shadow:0 2px 12px #000b;font-weight:600}.video-section h2{text-shadow:0 6px 24px #000a}
+.hero-meta span:first-child{border:1px solid #e8bfc68c;padding:12px 17px;border-radius:30px;background:#2113189e;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .hero-deco{position:absolute;right:13%;top:24%;width:270px;height:390px;border:1px solid #e7b9bd55;transform:rotate(7deg);padding:12px;z-index:1;animation:fadeIn 2s .5s both}
 .hero-deco:before{content:"N + N";position:absolute;inset:0;display:grid;place-items:center;font:italic 52px 'Playfair Display';color:#f2d7db55}
 .hero-deco:after{content:"19 · 11 · 2026";position:absolute;bottom:22px;left:0;width:100%;text-align:center;font-size:9px;letter-spacing:4px;color:#f1cbd0}
@@ -117,9 +118,9 @@ footer{padding:25px;text-align:center;border-top:1px solid var(--line);font-size
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 @media(max-width:700px){
  .topbar{height:62px;padding:0 6vw}.topnote{font-size:8px;letter-spacing:1.5px}
- .hero{min-height:720px;height:92svh;padding:100px 7vw 80px}.hero h1{font-size:clamp(78px,19vw,120px);letter-spacing:-3px}.hero h1 em{padding-left:15vw}
+ .hero{min-height:900px;height:auto;align-items:flex-start;padding:100px 7vw 80px}.hero h1{font-size:clamp(78px,19vw,120px);letter-spacing:-3px}.hero h1 em{padding-left:15vw}
  .hero-deco{display:none}.hero-stamp{right:3%;bottom:15%}
- .hero-img-wrap{right:-8%;height:62%;opacity:.9}
+ .hero-img-wrap{left:0;right:0;bottom:55px;height:46%;display:flex;justify-content:center}
  .section{padding:82px 6vw}.section-head{display:block}.section-head p{margin-top:18px}
  .video-grid{grid-template-columns:1fr;gap:18px}.video-card video{aspect-ratio:16/10}
  .photo-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:65px;gap:8px}
@@ -141,7 +142,7 @@ footer{padding:25px;text-align:center;border-top:1px solid var(--line);font-size
   <div class="hero-meta"><span>19 · 11 · 2026</span><span>♡ &nbsp; OUR LITTLE STORY</span></div>
  </div>
  <div class="hero-deco"></div>
- <div class="hero-img-wrap"><img class="hero-img" src="nhinhanhero.png" alt="Nhân" onerror="this.parentNode.style.display='none'"></div>
+ <div class="hero-img-wrap"><img class="hero-img" src="nhanhero.png" alt="Nhân" onerror="this.parentNode.style.display='none'"></div>
  <div class="hero-stamp">A DAY JUST FOR YOU</div>
  <a class="scrollcue" href="#videos">SCROLL TO OUR MEMORIES</a>
 </header>
@@ -163,7 +164,7 @@ footer{padding:25px;text-align:center;border-top:1px solid var(--line);font-size
    <div class="video-label"><strong>Little moment no. 02</strong><span>PLAY ↗</span></div>
   </article>
   <article class="video-card">
-   <video controls playsinline preload="metadata" poster="nhanpic3.jpg">
+   <video controls playsinline preload="auto" poster="nhanpic3.jpg">
     <source src="nhanvid3.mp4" type="video/mp4">Trình duyệt của bạn không hỗ trợ video.
    </video>
    <div class="video-label"><strong>Little moment no. 03</strong><span>PLAY ↗</span></div>
