@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#21151a">
+<title>Nhi & Nhân — Our Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+:root{--ink:#21151a;--paper:#f5eee8;--rose:#c98291;--rose2:#e7b9bd;--muted:#a99a9b;--line:#ffffff20}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:'DM Sans',sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.topbar{height:74px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:absolute;z-index:5;top:0;width:100%}
+.logo{font:600 21px 'Playfair Display';letter-spacing:.3px}.logo b{color:var(--rose2);font-weight:500}.topnote{font-size:10px;letter-spacing:3px;color:#d7bdc0;text-transform:uppercase}
+.hero{min-height:790px;height:100svh;max-height:1000px;position:relative;display:flex;align-items:center;overflow:hidden;padding:110px 9vw 90px;background:radial-gradient(ellipse at 75% 43%,#754052 0,#432532 32%,#21151a 70%)}
+.hero:before{content:"";position:absolute;width:62vw;height:62vw;max-width:850px;max-height:850px;border:1px solid #f2d4d322;border-radius:50%;right:-7vw;top:7%;box-shadow:0 0 0 35px #f2d4d30a,0 0 0 80px #f2d4d307}
+.hero:after{content:"";position:absolute;width:34vw;height:34vw;max-width:480px;max-height:480px;border:1px solid #f2d4d322;border-radius:50%;right:7vw;top:25%}
+.hero-copy{position:relative;z-index:2;max-width:690px}
+.eyebrow,.section-kicker{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rose2)}
+.hero h1{font:500 clamp(76px,12vw,158px)/.83 'Playfair Display';letter-spacing:-5px;margin:28px 0 30px}
+.hero h1 em{font-weight:500;color:var(--rose2);display:block;padding-left:12vw}
+.hero-sub{font:italic 21px 'Playfair Display';color:#e6cfd0;max-width:390px;line-height:1.6;margin:0 0 36px}
+.hero-meta{display:flex;align-items:center;gap:18px;font-size:11px;letter-spacing:2px;color:#e5cbd0}
+.hero-meta span:first-child{border:1px solid #e8bfc65c;padding:12px 17px;border-radius:30px}
+.hero-deco{position:absolute;right:13%;top:24%;width:270px;height:390px;border:1px solid #e7b9bd55;transform:rotate(7deg);padding:12px;z-index:1}
+.hero-deco:before{content:"N + N";position:absolute;inset:0;display:grid;place-items:center;font:italic 52px 'Playfair Display';color:#f2d7db55}
+.hero-deco:after{content:"19 · 11 · 2026";position:absolute;bottom:22px;left:0;width:100%;text-align:center;font-size:9px;letter-spacing:4px;color:#f1cbd0}
+.hero-stamp{position:absolute;right:9vw;bottom:11%;font:italic 16px 'Playfair Display';color:#d9b4bb;writing-mode:vertical-rl;letter-spacing:2px}
+.scrollcue{position:absolute;left:9vw;bottom:35px;color:#bda9ad;font-size:9px;letter-spacing:3px}
+.scrollcue:after{content:"";display:inline-block;width:48px;height:1px;background:var(--rose);vertical-align:middle;margin-left:12px}
+.section{padding:115px 9vw}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}
+.section-head h2{font:500 clamp(40px,6vw,72px)/1 'Playfair Display';margin:13px 0 0;letter-spacing:-1.5px}
+.section-head p{max-width:280px;color:#bcaeb0;font-size:13px;line-height:1.8;margin:0 0 4px}
+.video-section{background:#2a1a21}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.video-card{position:relative;background:#120d10;border:1px solid #ffffff1a;padding:10px}
+.video-card video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#160f13}
+.video-card:nth-child(2) video{aspect-ratio:4/5}
+.video-label{display:flex;justify-content:space-between;align-items:center;padding:16px 7px 8px}
+.video-label strong{font:500 22px 'Playfair Display'}.video-label span{font-size:9px;letter-spacing:2px;color:var(--rose2)}
+.video-help{font-size:11px;color:#a9959b;margin-top:18px}
+.gallery-section{background:var(--paper);color:#33232a}
+.gallery-section .section-kicker{color:#a45e70}.gallery-section .section-head p{color:#806e72}
+.photo-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:92px;gap:13px}
+.photo{border:0;padding:0;background:#dfd2cd;position:relative;overflow:hidden;cursor:zoom-in;min-width:0}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s}
+.photo:hover img{transform:scale(1.045)}
+.photo:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#1a0d12a8);opacity:.75}
+.photo small{position:absolute;z-index:1;bottom:14px;left:16px;color:white;font-size:10px;letter-spacing:1.2px}
+.photo:nth-child(1){grid-column:span 5;grid-row:span 4}.photo:nth-child(2){grid-column:span 3;grid-row:span 3}.photo:nth-child(3){grid-column:span 4;grid-row:span 3}
+.photo:nth-child(4){grid-column:span 3;grid-row:span 3}.photo:nth-child(5){grid-column:span 4;grid-row:span 4}.photo:nth-child(6){grid-column:span 5;grid-row:span 3}
+.photo:nth-child(7){grid-column:span 4;grid-row:span 3}.photo:nth-child(8){grid-column:span 3;grid-row:span 3}.photo:nth-child(9){grid-column:span 5;grid-row:span 3}
+.letter-section{padding:125px 7vw;background:linear-gradient(135deg,#21151a,#482634)}
+.letter{max-width:850px;margin:auto;background:#f5eee8;color:#422b34;padding:clamp(35px,7vw,80px);position:relative;box-shadow:0 25px 90px #08050766}
+.letter:before{content:"";position:absolute;inset:13px;border:1px solid #b87b8966;pointer-events:none}
+.letter-top{text-align:center;font-size:9px;letter-spacing:4px;color:#a65e72;text-transform:uppercase}
+.letter h2{text-align:center;font:600 clamp(38px,5vw,57px) 'Playfair Display';margin:19px 0 35px;color:#542b3b}
+.letter p{font-size:15px;line-height:2;margin:0 0 17px;color:#604650}
+.letter .sign{text-align:right;font:italic 25px 'Playfair Display';color:#a4536b;margin-top:28px}
+.letter .sign span{font:500 13px 'DM Sans'}
+.final{padding:100px 20px;text-align:center;background:#1b1116}
+.final .heart{font-size:35px;color:var(--rose2);animation:pulse 1.8s infinite}
+.final h2{font:500 clamp(33px,5vw,55px) 'Playfair Display';margin:20px 0 12px}
+.final p{font-size:12px;letter-spacing:2px;color:#bba8ad}
+footer{padding:25px;text-align:center;border-top:1px solid var(--line);font-size:9px;letter-spacing:3px;color:#a48f96}
+.viewer{display:none;position:fixed;inset:0;background:#080609f2;z-index:20;align-items:center;justify-content:center;padding:25px}
+.viewer.show{display:flex}.viewer img{max-width:90vw;max-height:84vh;object-fit:contain}
+.viewer button{position:absolute;border:1px solid #ffffff66;background:#ffffff15;color:white;width:44px;height:44px;border-radius:50%;font-size:24px;cursor:pointer}
+.viewer .x{top:22px;right:22px}.viewer .prev{left:18px}.viewer .next{right:18px}
+.viewer-caption{position:absolute;bottom:20px;color:#eadadd;font-size:11px;letter-spacing:2px}
+@keyframes pulse{50%{transform:scale(1.17)}}
+@media(max-width:700px){
+ .topbar{height:62px;padding:0 6vw}.topnote{font-size:8px;letter-spacing:1.5px}
+ .hero{min-height:720px;height:92svh;padding:100px 7vw 80px}.hero h1{font-size:clamp(78px,19vw,120px);letter-spacing:-3px}.hero h1 em{padding-left:15vw}
+ .hero-deco{width:125px;height:220px;right:8%;top:17%;opacity:.6}.hero-deco:before{font-size:27px}.hero-stamp{right:5%;bottom:15%}
+ .section{padding:82px 6vw}.section-head{display:block}.section-head p{margin-top:18px}
+ .video-grid{grid-template-columns:1fr;gap:18px}.video-card video{aspect-ratio:16/10!important}
+ .photo-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:65px;gap:8px}
+ .photo:nth-child(1){grid-column:span 3;grid-row:span 4}.photo:nth-child(2){grid-column:span 3;grid-row:span 3}
+ .photo:nth-child(3){grid-column:span 3;grid-row:span 3}.photo:nth-child(4){grid-column:span 3;grid-row:span 3}
+ .photo:nth-child(5){grid-column:span 3;grid-row:span 4}.photo:nth-child(6){grid-column:span 3;grid-row:span 3}
+ .photo:nth-child(7){grid-column:span 3;grid-row:span 3}.photo:nth-child(8){grid-column:span 3;grid-row:span 3}.photo:nth-child(9){grid-column:span 6;grid-row:span 3}
+ .letter-section{padding:80px 5vw}.letter{padding:42px 27px}.letter p{font-size:14px}
+}
+</style>
+</head>
+<body>
+<nav class="topbar"><div class="logo">Nhi <b>♡</b> Nhân</div><div class="topnote">A story made of little moments</div></nav>
+<header class="hero">
+ <div class="hero-copy">
+  <div class="eyebrow">For the one I choose, every day</div>
+  <h1>Nhi <em>& Nhân</em></h1>
+  <p class="hero-sub">“Có những người xuất hiện, rồi trở thành cả một thế giới.”</p>
+  <div class="hero-meta"><span>19 · 11 · 2026</span><span>♡ &nbsp; OUR LITTLE STORY</span></div>
+ </div>
+ <div class="hero-deco"></div><div class="hero-stamp">A DAY JUST FOR YOU</div>
+ <a class="scrollcue" href="#videos">SCROLL TO OUR MEMORIES</a>
+</header>
+
+<main>
+<section class="section video-section" id="videos">
+ <div class="section-head"><div><div class="section-kicker">01 — Moving memories</div><h2>Những thước phim<br><i>của chúng mình.</i></h2></div><p>Có những khoảnh khắc, chỉ xem lại thôi cũng đủ khiến mình mỉm cười.</p></div>
+ <div class="video-grid">
+  <article class="video-card">
+   <video controls playsinline preload="metadata" poster="media/nhanpic1.jpg">
+    <source src="media/nhanvid1.mp4" type="video/mp4">Trình duyệt của bạn không hỗ trợ video.
+   </video>
+   <div class="video-label"><strong>Little moment no. 01</strong><span>PLAY THE MEMORY ↗</span></div>
+  </article>
+  <article class="video-card">
+   <video controls playsinline preload="metadata" poster="media/nhanpic2.jpg">
+    <source src="media/nhanvid2.mp4" type="video/mp4">Trình duyệt của bạn không hỗ trợ video.
+   </video>
+   <div class="video-label"><strong>Little moment no. 02</strong><span>PLAY THE MEMORY ↗</span></div>
+  </article>
+ </div>
+ <div class="video-help">Bấm nút phát trên từng video để xem lại kỷ niệm.</div>
+</section>
+
+<section class="section gallery-section" id="photos">
+ <div class="section-head"><div><div class="section-kicker">02 — The photo diary</div><h2>Album của<br><i>hai đứa mình.</i></h2></div><p>Một vài mảnh ghép nhỏ trong hành trình thật dài mà mình mong sẽ còn tiếp tục.</p></div>
+ <div class="photo-grid">
+  <button class="photo" type="button" data-caption="OUR MEMORY 01">
+      <img src="media/nhanpic1.jpg" alt="Kỷ niệm Nhi và Nhân số 1" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic1.jpg'">
+      <small>MEMORY 01</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 02">
+      <img src="media/nhanpic2.jpg" alt="Kỷ niệm Nhi và Nhân số 2" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic2.jpg'">
+      <small>MEMORY 02</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 03">
+      <img src="media/nhanpic3.jpg" alt="Kỷ niệm Nhi và Nhân số 3" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic3.jpg'">
+      <small>MEMORY 03</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 04">
+      <img src="media/nhanpic4.jpg" alt="Kỷ niệm Nhi và Nhân số 4" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic4.jpg'">
+      <small>MEMORY 04</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 05">
+      <img src="media/nhanpic5.jpg" alt="Kỷ niệm Nhi và Nhân số 5" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic5.jpg'">
+      <small>MEMORY 05</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 06">
+      <img src="media/nhanpic6.jpg" alt="Kỷ niệm Nhi và Nhân số 6" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic6.jpg'">
+      <small>MEMORY 06</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 07">
+      <img src="media/nhanpic7.jpg" alt="Kỷ niệm Nhi và Nhân số 7" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic7.jpg'">
+      <small>MEMORY 07</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 08">
+      <img src="media/nhanpic8.jpg" alt="Kỷ niệm Nhi và Nhân số 8" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic8.jpg'">
+      <small>MEMORY 08</small>
+    </button>
+<button class="photo" type="button" data-caption="OUR MEMORY 09">
+      <img src="media/nhanpic9.jpg" alt="Kỷ niệm Nhi và Nhân số 9" loading="lazy" onerror="this.style.opacity='.12';this.alt='Thêm ảnh media/nhanpic9.jpg'">
+      <small>MEMORY 09</small>
+    </button>
+ </div>
+</section>
+
+<section class="letter-section">
+ <article class="letter">
+  <div class="letter-top">A letter from Nhi, with love</div>
+  <h2>Gửi Nhân thương ❤️</h2>
+  <p>❤️ Chúc mừng ngày Quốc tế Nam giới 19/11!</p>
+  <p>Cảm ơn anh vì đã xuất hiện trong cuộc đời em, vì đã cùng em đi qua những ngày vui buồn và luôn nắm tay em trên hành trình này.</p>
+  <p>Em không mong anh phải trở thành người hoàn hảo, chỉ mong anh luôn mạnh khỏe, bình an, thành công và luôn giữ được nụ cười trên môi.</p>
+  <p>Mong rằng những chặng đường phía trước, người nắm tay em vẫn luôn là anh.</p>
+  <p class="sign">Thương anh nhiều! ❤️<br><span>— Nhi</span></p>
+ </article>
+</section>
+<section class="final"><div class="heart">♥</div><h2>Vẫn là anh, ở những ngày phía trước.</h2><p>NHI ♡ NHÂN · 19.11.2026</p></section>
+</main>
+<footer>MADE WITH LOVE · NHI ♡ NHÂN</footer>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
+ <button class="x" aria-label="Đóng">×</button><button class="prev" aria-label="Ảnh trước">‹</button><img id="viewer-img" alt=""><button class="next" aria-label="Ảnh tiếp">›</button><div class="viewer-caption" id="viewer-caption"></div>
+</div>
+<script>
+const photos=[...document.querySelectorAll('.photo')],viewer=document.getElementById('viewer'),viewImg=document.getElementById('viewer-img'),viewCaption=document.getElementById('viewer-caption');let active=0;
+function openPhoto(i){active=(i+photos.length)%photos.length;const p=photos[active];viewImg.src=p.querySelector('img').src;viewImg.alt=p.querySelector('img').alt;viewCaption.textContent=p.dataset.caption;viewer.classList.add('show');document.body.style.overflow='hidden'}
+function closePhoto(){viewer.classList.remove('show');document.body.style.overflow=''}
+photos.forEach((p,i)=>p.addEventListener('click',()=>openPhoto(i)));
+viewer.querySelector('.x').addEventListener('click',closePhoto);
+viewer.querySelector('.prev').addEventListener('click',()=>openPhoto(active-1));
+viewer.querySelector('.next').addEventListener('click',()=>openPhoto(active+1));
+viewer.addEventListener('click',e=>{if(e.target===viewer)closePhoto()});
+document.addEventListener('keydown',e=>{if(!viewer.classList.contains('show'))return;if(e.key==='Escape')closePhoto();if(e.key==='ArrowLeft')openPhoto(active-1);if(e.key==='ArrowRight')openPhoto(active+1)});
+</script>
+</body></html>
